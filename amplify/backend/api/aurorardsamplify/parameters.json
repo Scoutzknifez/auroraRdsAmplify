@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "aurorardsamplify",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authaurorardsamplify5b3ec43d",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+type Item @model @auth(rules: [{allow: owner, ownerField: "id", operations: [create, update, delete]}]) {
+  id: ID!
+  title: String!
+}
+
+input CreateItemsInput {
+  id: String!
+  title: String!
+}
+
+type Items {
+  id: String!
+  title: String!
+}
+
+input UpdateItemsInput {
+  id: String!
+  title: String
+}
+
+type Mutation {
+  deleteItems(id: String!): Items
+  createItems(createItemsInput: CreateItemsInput!): Items
+  updateItems(updateItemsInput: UpdateItemsInput!): Items
+}
+
+type Query {
+  getItems(id: String!): Items
+  listItemss: [Items]
+}
+
+type Subscription {
+  onCreateItems: Items @aws_subscribe(mutations: ["createItems"])
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
