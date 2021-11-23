@@ -44,5 +44,26 @@
       },
       "rdsInit": true
     }
+  },
+  "function": {
+    "aurorardsamplifymysql2": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
+    },
+    "dataStoreLink": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "aurorardsamplifymysql2",
+          "attributes": [
+            "Arn"
+          ]
+        }
+      ]
+    }
   }
 }

@@ -22,6 +22,11 @@
           "rdsSecretStoreArn": "arn:aws:secretsmanager:us-west-1:308018567219:secret:rds-db-credentials/cluster-FFSH4W33AQWQTIGZOFONAVRULQ/Scoutzknifez-cGXwhP",
           "rdsDatabaseName": "ItemStore"
         }
+      },
+      "function": {
+        "dataStoreLink": {
+          "version": "1"
+        }
       }
     }
   }

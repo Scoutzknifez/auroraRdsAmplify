@@ -1,6 +1,8 @@
-type Item @model @auth(rules: [{allow: owner, ownerField: "id", operations: [create, update, delete]}]) {
-  id: ID!
-  title: String!
+type Item @model 
+    @auth(rules: [{ allow: owner, operations: [create, update, delete] }])
+    @key(name: "byId", fields: ["id"]) {
+    id: ID!
+    title: String!
 }
 
 input CreateItemsInput {

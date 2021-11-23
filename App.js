@@ -6,9 +6,16 @@ import { withAuthenticator } from 'aws-amplify-react-native';
 import Landing from "./screens/Landing";
 
 import Amplify from "aws-amplify";
-import awsmobile from './src/aws-exports';
+import config from './src/aws-exports';
 
-Amplify.configure(awsmobile);
+Amplify.configure({
+    ...config,
+    // Adding this below stops this analytics error:
+    // Error: No credentials, applicationId or region
+    Analytics: {
+        disabled: true
+    }
+});
 
 const navigationStack = createStackNavigator();
 

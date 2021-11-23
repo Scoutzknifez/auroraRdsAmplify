@@ -1,0 +1,20 @@
+query ListAllItems {
+  listItems {
+    items {
+      id
+      title
+    }
+  }
+}
+
+mutation CreateItem {
+  createItem(input: {title: "Test title"}) {
+    id
+    title
+  }
+}
+
+type Item @model @key(name: "byId", fields: ["id"]) {
+  id: ID!
+  title: String!
+}

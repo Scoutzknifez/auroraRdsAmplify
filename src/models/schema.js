@@ -42,12 +42,21 @@ export const schema = {
                     "properties": {}
                 },
                 {
+                    "type": "key",
+                    "properties": {
+                        "name": "byId",
+                        "fields": [
+                            "id"
+                        ]
+                    }
+                },
+                {
                     "type": "auth",
                     "properties": {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "id",
+                                "ownerField": "owner",
                                 "allow": "owner",
                                 "operations": [
                                     "create",
@@ -84,5 +93,5 @@ export const schema = {
             }
         }
     },
-    "version": "85dc46d28728ee6f850f0dcfe2df2efb"
+    "version": "2c1b16e29710c7ddc00e90ec7437ed62"
 };
