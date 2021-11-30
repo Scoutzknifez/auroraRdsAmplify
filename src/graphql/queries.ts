@@ -2,22 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getItems = /* GraphQL */ `
-  query GetItems($id: String!) {
-    getItems(id: $id) {
-      id
-      title
-    }
-  }
-`;
-export const listItemss = /* GraphQL */ `
-  query ListItemss {
-    listItemss {
-      id
-      title
-    }
-  }
-`;
 export const syncItems = /* GraphQL */ `
   query SyncItems(
     $filter: ModelItemFilterInput

@@ -1,0 +1,8 @@
+1. Check the differences between DeltaSync table and the main table.
+
+2. When are subscription events triggered from AppSync/GraphQL
+    - Test this with AppSync UI and put device on Airplane mode to Check
+
+3. When does conflict resolution change the main table?
+
+4. Does conflict resolution generate a subscription event?

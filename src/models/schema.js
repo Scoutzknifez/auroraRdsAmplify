@@ -72,26 +72,6 @@ export const schema = {
         }
     },
     "enums": {},
-    "nonModels": {
-        "Items": {
-            "name": "Items",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "title": {
-                    "name": "title",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                }
-            }
-        }
-    },
-    "version": "2c1b16e29710c7ddc00e90ec7437ed62"
+    "nonModels": {},
+    "version": "8d784412c061c929406cc647c478ccc7"
 };

@@ -8,9 +8,13 @@ query ListAllItems {
 }
 
 mutation CreateItem {
-  createItem(input: {title: "Test title"}) {
+  createItem(input: {title: "Test title v3"}) {
     id
     title
+    createdAt,
+    updatedAt,
+    _version,
+    _lastChangedAt
   }
 }
 

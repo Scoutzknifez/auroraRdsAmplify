@@ -1,0 +1,6 @@
+type Item @model 
+    @auth(rules: [{ allow: owner, operations: [create, update, delete] }])
+    @key(name: "byId", fields: ["id"]) {
+    id: ID!
+    title: String!
+}

@@ -2,14 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateItems = /* GraphQL */ `
-  subscription OnCreateItems {
-    onCreateItems {
-      id
-      title
-    }
-  }
-`;
 export const onCreateItem = /* GraphQL */ `
   subscription OnCreateItem {
     onCreateItem {

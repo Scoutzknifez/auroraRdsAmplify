@@ -2,11 +2,7 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-export declare class Items {
-  readonly id: string;
-  readonly title: string;
-  constructor(init: ModelInit<Items>);
-}
+
 
 type ItemMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';

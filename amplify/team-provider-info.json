@@ -14,19 +14,6 @@
     "categories": {
       "auth": {
         "aurorardsamplify5b3ec43d": {}
-      },
-      "api": {
-        "aurorardsamplify": {
-          "rdsRegion": "us-west-1",
-          "rdsClusterIdentifier": "arn:aws:rds:us-west-1:308018567219:cluster:amplifyplayground",
-          "rdsSecretStoreArn": "arn:aws:secretsmanager:us-west-1:308018567219:secret:rds-db-credentials/cluster-FFSH4W33AQWQTIGZOFONAVRULQ/Scoutzknifez-cGXwhP",
-          "rdsDatabaseName": "ItemStore"
-        }
-      },
-      "function": {
-        "dataStoreLink": {
-          "version": "1"
-        }
       }
     }
   }

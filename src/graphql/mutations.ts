@@ -2,30 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const deleteItems = /* GraphQL */ `
-  mutation DeleteItems($id: String!) {
-    deleteItems(id: $id) {
-      id
-      title
-    }
-  }
-`;
-export const createItems = /* GraphQL */ `
-  mutation CreateItems($createItemsInput: CreateItemsInput!) {
-    createItems(createItemsInput: $createItemsInput) {
-      id
-      title
-    }
-  }
-`;
-export const updateItems = /* GraphQL */ `
-  mutation UpdateItems($updateItemsInput: UpdateItemsInput!) {
-    updateItems(updateItemsInput: $updateItemsInput) {
-      id
-      title
-    }
-  }
-`;
 export const createItem = /* GraphQL */ `
   mutation CreateItem(
     $input: CreateItemInput!
