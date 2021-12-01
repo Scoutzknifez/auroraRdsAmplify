@@ -1,8 +1,27 @@
 1. Check the differences between DeltaSync table and the main table.
+    - DeltaSync tables has a field for Keys: {ds_pk, ds_sk} which is passed to the lambda.  
+    - Also the ds_pk and ds_sk fields are part of the NewImage field.
+    - The main table has a field for Keys: {id: UUID}
 
-2. When are subscription events triggered from AppSync/GraphQL
-    - Test this with AppSync UI and put device on Airplane mode to Check
+2. When are subscription events triggered from AppSync/GraphQL?
+    - When AppSync recieves the online invocation of the mutation (Essentially when the app reconnects).
 
 3. When does conflict resolution change the main table?
+    - Whenever online actions occur
+    - The first sender always wins a same field merge
 
 4. Does conflict resolution generate a subscription event?
+    - Yes, under eventName: MODIFY
+
+5. Operations from stream?
+    - INSERT, MODIFY
+
+6. Where are deletions?
+    - When the operation is MODIFY
+    - The DynamoDB object has properties NewImage and OldImage
+    - The NewImage property has a field called _deleted
+
+7. Updates are when?
+    - When the operation is MODIFY
+    - The DynamoDB object has properties NewImage and OldImage
+    - The NewImage property is missing a field called _deleted

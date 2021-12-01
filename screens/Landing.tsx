@@ -51,6 +51,16 @@ export default class Landing extends Component<any, LandingState> {
         );
     }
 
+    async update(item: any) {
+        let response = await DataStore.save(
+            Item.copyOf(item, updated => {
+                updated.title = `${updated.title} + update`
+            })
+        );
+
+        console.log(response);
+    }
+
     async observe() {
         this.subscriber = DataStore.observe(Item).subscribe(observed => {
             let action = observed.opType;
@@ -88,11 +98,14 @@ export default class Landing extends Component<any, LandingState> {
 
     async delete() {
         let response = await DataStore.delete(Item, Predicates.ALL);
-        console.log(response);
     }
 
     pressCreate() {
         this.create();
+    }
+
+    pressEntry(item: any) {
+        this.update(item);
     }
 
     pressDelete() {
@@ -113,8 +126,9 @@ export default class Landing extends Component<any, LandingState> {
 
         this.state.items.forEach(item => {
             elements.push(
-                <View
+                <TouchableOpacity
                     key = {item.id}
+                    onPress = {() => this.pressEntry(item)}
                     style = {{justifyContent: "center", borderRadius: 8, marginTop: 12, backgroundColor: "#888"}}
                 >
                     <Text
@@ -122,7 +136,7 @@ export default class Landing extends Component<any, LandingState> {
                     >
                         {item.title}
                     </Text>
-                </View>
+                </TouchableOpacity>
             );
         });
 
